@@ -1,0 +1,37 @@
+version: '3.8'
+services:
+  php-apache-environment:
+    container_name: php-apache-kokmon
+    restart: always
+    build: 
+      context: ./php
+      dockerfile: Dockerfile
+    depends_on:
+      - db
+    # image: php:8.2-apache
+    volumes:
+      - ./php/src:/var/www/html/
+    ports:
+      - 8080:80
+#run: $ docker-compose up
+  db:
+    container_name: db_kokmon
+    image: mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: MYSQL_ROOT_PASSWORD
+      MYSQL_DATABASE: kok_mon
+      MYSQL_USER: MYSQL_USER
+      MYSQL_PASSWORD: MYSQL_PASSWORD
+    ports:
+      - 9906:3306
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    ports:
+      - "8000:80"
+    restart: always
+    environment:
+      PMA_HOST: db
+    depends_on:
+      - db
+#run : $ docker-compose up

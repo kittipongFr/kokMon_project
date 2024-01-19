@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang='en'>
+    <head>
+    <title>lightSlider Demo</title>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='description' content=''>
+    <link rel='stylesheet'  href='../src/css/lightslider.css'/>
+    <style>
+    	ul{
+			list-style: none outside none;
+		    padding-left: 0;
+            margin: 0;
+		}
+        .demo .item{
+            margin-bottom: 60px;
+        }
+		.content-slider li{
+		    background-color: #ed3020;
+		    text-align: center;
+		    color: #FFF;
+		}
+		.content-slider h3 {
+		    margin: 0;
+		    padding: 70px 0;
+		}
+		.demo{
+			width: 800px;
+		}
+        
+    </style>
+    <script src='http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js'></script>
+    <script src='../src/js/lightslider.js'></script> 
+    <script>
+    	 $(document).ready(function() {
+			$('#content-slider').lightSlider({
+                loop:true,
+                keyPress:true
+            });
+            $('#image-gallery').lightSlider({
+                gallery:true,
+                item:1,
+                thumbItem:9,
+                slideMargin: 0,
+                speed:1000,
+                auto:true,
+                loop:true,
+                onSliderLoad: function() {
+                    $('#image-gallery').removeClass('cS-hidden');
+                }  
+            });
+		});
+    </script>
+</head>
+<body>
+	<div class='demo'>
+        <div class='item'>            
+            <div class='clearfix' style='max-width:474px;'>
+                <ul id='image-gallery' class='gallery list-unstyled cS-hidden mx-auto'>
+                    <li data-thumb='img/thumb/cS-1.jpg'> 
+                        <img src='img/cS-1.jpg' />
+                         </li>
+                    <li data-thumb='img/thumb/cS-2.jpg'> 
+                        <img src='img/cS-2.jpg' />
+                         </li>
+                 
+                   
+                </ul>
+            </div>
+        </div>
+    </div>	
+</body>
