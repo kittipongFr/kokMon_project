@@ -80,6 +80,9 @@
           <li>
             <a href="mt_used.php"><span class="fas fa-shapes"></span>วัตถุดิบใช้ไป</a>
           </li>
+          <li>
+            <a href=".php"><span class="fas fa-shapes"></span>วัตถุดิบใช้ไป</a>
+          </li>
 
           <li class="">
     <a class="nav-link <?php echo (strpos($_SERVER['REQUEST_URI'], 'order.php') !== false || strpos($_SERVER['REQUEST_URI'], 
